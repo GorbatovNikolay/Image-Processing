@@ -8,7 +8,9 @@ EXEC_PATH = os.getcwd()
 def detect_objects():
     detector = ObjectDetection()
     detector.useCPU()
-
+    
+    # загрузить модель по ссылке 
+    # https://github.com/OlafenwaMoses/ImageAI/releases/download/3.0.0-pretrained/retinanet_resnet50_fpn_coco-eeacb38b.pth/
     detector.setModelTypeAsRetinaNet()
     detector.setModelPath(os.path.join(EXEC_PATH, 'retinanet_resnet50_fpn_coco-eeacb38b.pth'))
     detector.loadModel()
@@ -26,6 +28,8 @@ def detect_video_objects():
     detector = VideoObjectDetection()
     detector.useCPU()
 
+    # загрузить модель по ссылке
+    # https://github.com/OlafenwaMoses/ImageAI/releases/download/3.0.0-pretrained/yolov3.pt/
     detector.setModelTypeAsYOLOv3()
     detector.setModelPath(os.path.join(EXEC_PATH, 'yolov3.pt'))
     detector.loadModel()
